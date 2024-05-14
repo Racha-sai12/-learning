@@ -1,0 +1,102 @@
+
+/* Modal styles */
+
+.price-container {
+    display: flex; /* Use flexbox for layout */
+    align-items: baseline; /* Align items on the baseline for consistent alignment */
+    justify-content: center;
+}
+.price-container h3,
+.price-container p {
+    margin-right: 5px; /* Adjust spacing between elements */
+}
+
+.modal-title h2{
+    font-size: 25px;
+}
+.course-item{
+    display: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 500px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form .cred-card-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+
+form input[type="submit"]{
+    background-color: #06BBCC;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    width: fit-content;
+    align-self: center;
+}

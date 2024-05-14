@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>eLEARNING - eLearning HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link id="themeStylesheet" href="css/style.css" rel="stylesheet">
+    <link href="teacher.css" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary">Learning +</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="studentProfile.html" class="nav-item nav-link active">Profile</a>
+                <a href="Help.html" class="nav-item nav-link">Help</a>
+                <button id="themeButton" class="theme-button">
+                    <i id="themeIcon" class="bi bi-sun"></i>
+                </button>
+            </div>
+            <a href="login.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
+                <p class="add-course" id="addCourseItem">Add Course</p>
+
+            </div>
+                <div id="container" class="flex-container">
+                    <div class="course-item bg-light flex-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/course-1.jpg" alt="">
+                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                <a data-course-id="123" href="#" class="navigation-btn flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0px 0px 30px;">Details</a>
+                                <a data-course-id="123" href="#" class="delete-btn flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 0px 30px 30px 0px; background-color: #e74c3c; border-color: #e74c3c;">Delete</a>
+
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+
+                            <div class="price-container">
+                                <h3 class="mb-0">$149.00</h3>
+                                <p class="da">DA</p>
+                            </div>
+                            <!-- <h3 class="mb-0">$149.00</h3> DA -->
+                           
+                            <h5 class="mb-4">Web Design & Development Course for Beginners</h5>
+                        </div>
+                      
+                    </div>
+                </div>
+                
+        </div>
+    </div>
+    <!-- Courses End -->
+
+
+  
+
+   
+
+   <!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Quick Link</h4>
+                <a class="btn btn-link" href="/login.html">Login</a>
+                <a class="btn btn-link" href="/Help.html">Help</a>
+                <a class="btn btn-link" href="/teacherProfile.html">Profile</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Contact</h4>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>acilalaref@gmail.com</p>
+            </div>
+            
+           
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Learning +</a>, Laref Acila<a class="border-bottom" href="https://htmlcodex.com"></a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+         <div class="modal-title">
+            <span class="close">&times;</span>
+            <h2>Add Course</h2>
+         </div>
+          <form id="addCourseForm">
+              <label for="title">Title:</label>
+              <input type="text" id="title" name="title">
+              <label for="description">Description:</label>
+              <textarea id="description" name="description"></textarea>
+              <label for="image">Image URL:</label>
+              <input type="file" id="imageInput" accept="image/*">
+              <label for="link">Price</label>
+              <input type="number" id="price" name="price">
+              <input type="submit" value="Submit">
+          </form>
+        </div>
+    </div>
+
+   
+</body>
+</html>
+<script src="teacher.js"></script>
+<script src="theme.js"></script>
+
+

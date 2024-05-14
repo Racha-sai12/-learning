@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 100vh;
+            background: url('https://images.pexels.com/photos/4050320/pexels-photo-4050320.jpeg') no-repeat right;
+            background-size: cover;
+        }
+
+        .login-form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            /* border-radius: 10px; */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            max-width: 400px;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: start;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .form-group button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: #06BBCC;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .submit-buttons{
+            display: flex;
+        }
+        .submit-buttons button{
+            margin: 5px;
+        }
+        .action-div {
+            display: inline-block;
+            margin-right: 10px; /* Adjust margin as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h2>Welcome to +Learnig</h2>
+        <form id="LoginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+            <div class="form-group submit-buttons">
+                <div class="action-div">
+                    <button id="teacherSubmit" type="submit">Login as Teacher</button>
+                    <a href="/registerTeacher.html">Register as teacher</a>
+                </div>
+                <div class="action-div">
+                    <button id="studentSubmit" type="submit">Login as Student</button>
+                    <a href="/registerStudent.html">Register as student</a>
+                </div>
+            </div>
+        </form>
+        <p id="Message"></p>
+        
+    </div>
+</body>
+</html>
+<script src="login.js"></script>
+

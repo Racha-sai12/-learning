@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 100vh;
+            background: url('https://images.pexels.com/photos/4050320/pexels-photo-4050320.jpeg') no-repeat right;
+            background-size: cover;
+        }
+
+        .login-form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            /* border-radius: 10px; */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            max-width: 400px;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: start;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .form-group button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: #06BBCC;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .form-group button:hover {
+            background-color: #06BBCC;
+        }
+        .submit-buttons{
+            display: flex;
+        }
+        .submit-buttons button{
+            margin: 5px;
+        }
+        .form-group.submit-buttons.action-div {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+        }
+    </style>
+</head>
+<body>
+   
+    
+  
+    
+    <div class="login-form">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name">
+            </div>
+            <div class="form-group">
+                <label for="middleName">Middle Name</label>
+                <input type="text" id="middleName" name="middleName" placeholder="Enter your middle name">
+            </div>
+            <div class="form-group">
+                <label for="academicLevel">Suject</label>
+                <input type="text" id="subject" name="academicLevel" placeholder="Enter your academic level">
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+            <div class="form-group submit-buttons action-div ">
+                <button id="submitRegister" type="submit">Register teacher</button>
+                <a href="/Login.html">Login</a>
+            </div>
+        </form>
+        <p id="message"></p>
+    </div>
+</body>
+</html>
+  <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+    
+            // Get values from the form
+            var firstName = document.getElementById("firstName").value;
+            var middleName = document.getElementById("middleName").value;
+            var subject = document.getElementById("subject").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            sessionStorage.setItem('firstName', firstName);
+            sessionStorage.setItem('middleName', middleName);
+            sessionStorage.setItem('username', username);
+            sessionStorage.setItem('password', password);
+            sessionStorage.setItem('Level', subject);
+    
+            // Create an object with the form values
+            var teacher = {
+                firstName: firstName,
+                middleName: middleName,
+                subject: subject,
+                username: username,
+                password: password
+            };
+    
+            // Convert the object to a JSON string
+    
+            let teachers = JSON.parse(localStorage.getItem('teachers')) || [];
+            teachers.push(teacher);
+            localStorage.setItem('teachers', JSON.stringify(teachers));
+            // Store the JSON string in local storage
+            sessionStorage.setItem('teacher', teacher.username);
+
+
+    
+    // Redirect to student page after successful login
+            // Display a message
+            document.getElementById("message").innerText = "Teacher registered successfully.";
+            window.location.href = "teacherpage.html";
+
+        });
+    </script>
+<script src="login.js"></script>
+
+o

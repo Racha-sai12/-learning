@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>eLEARNING - eLearning HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link id="themeStylesheet" href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary">Learning +</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="studentProfile.html" class="nav-item nav-link active">Profile</a>
+                <a href="Help.html" class="nav-item nav-link">Help</a>
+                <button id="themeButton" class="theme-button">
+                    <i id="themeIcon" class="bi bi-sun"></i>
+                </button>
+            </div>
+            <a href="/login.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img id="courseImage" class="img-fluid position-absolute w-100 h-100" src="img/about.jpg" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 id="courseTitle" class="section-title bg-white text-start text-primary pe-3"> Course title</h6>
+                    <p id="courseDescription" class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <h6 class="section-title bg-white text-start text-primary pe-3"> Participants</h6>
+                    
+                    <table id="enrollmentTable" class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Student</th>
+                            <th scope="col">Payment state</th>
+                            <th scope="col">Session</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="/login.html">Login</a>
+                    <a class="btn btn-link" href="/Help.html">Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>acilalaref@gmail.com</p>
+                </div>
+                
+               
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Learning +</a>, Laref Acila<a class="border-bottom" href="https://htmlcodex.com"></a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</body>
+
+</html>
+<script src="theme.js"></script>
+
+<script>
+    function getQueryParam(param) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams.get(param);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+
+
+    const courseId = getQueryParam('id');
+
+    console.log(courseId);
+    var tableBody = document.querySelector("#enrollmentTable tbody");
+    var enrollments = JSON.parse(localStorage.getItem("enrollments"));
+    if(enrollments != null)
+    {
+        var filteredEnrollments = enrollments.filter(function(enrollment) {
+            return enrollment.courseId === courseId;
+        });
+
+      if (filteredEnrollments && filteredEnrollments.length > 0) {
+        filteredEnrollments.forEach(function(item, index) {
+          var row = tableBody.insertRow();
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+
+
+          cell1.textContent = index + 1;
+          cell2.textContent = item.student;
+          cell3.textContent = item.paymentOption;
+          cell4.textContent = item.session;
+
+        });
+        }
+    }
+
+    
+
+    
+    const course = JSON.parse(localStorage.getItem('courses')).find(course => course.id === courseId);
+
+    console.log(course);
+    // Display course information on the page
+    if (course) {
+        const courseImage = document.getElementById('courseImage');
+        courseImage.src = course.image;
+        const courseTitle = document.getElementById('courseTitle');
+        courseTitle.textContent = course.title;
+        const courseDescription = document.getElementById('courseDescription');
+        courseDescription.textContent = course.description;
+
+       
+        
+    } else {
+        console.error('Course not found!');
+    }
+});
+</script>

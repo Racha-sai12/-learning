@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>eLEARNING - eLearning HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link id="themeStylesheet" href="css/style.css" rel="stylesheet">
+    <link href="teacher.css" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary">Learning +</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="Profile.html" class="nav-item nav-link active">Profile</a>
+                <a href="Help.html" class="nav-item nav-link">Help</a>
+                <button id="themeButton" class="theme-button">
+                    <i id="themeIcon" class="bi bi-sun"></i>
+                </button>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-primary px-3">Profile</h6>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" value="ff" placeholder="Enter your first name">
+                </div>
+                <div class="form-group">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" id="middleName" name="middleName" placeholder="Enter your middle name">
+                </div>
+                <div class="form-group">
+                    <label for="academicLevel">Academic Level</label>
+                    <input type="text" id="level" name="academicLevel" placeholder="Enter your academic level">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+                <div class="form-group submit-buttons">
+                    <button class="btn" id="submitRegister" type="submit">Save edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+  
+
+   
+
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="/login.html">Login</a>
+                    <a class="btn btn-link" href="/Help.html">Help</a>
+                    <a class="btn btn-link" href="/studentpage.html">MainPage</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>acilalaref@gmail.com</p>
+                </div>
+                
+               
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Learning +</a>, Laref Acila<a class="border-bottom" href="https://htmlcodex.com"></a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+   
+</body>
+</html>
+<script src="student.js"></script>
+<script src="theme.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        var currentFirstName = sessionStorage.getItem('firstName');
+        var currentMiddleName = sessionStorage.getItem('middleName');
+        var currentUserName = sessionStorage.getItem('username');
+        var currentPsw = sessionStorage.getItem('password');
+        var currentLevel = sessionStorage.getItem('Level');
+
+        var firstName = document.getElementById("firstName");
+        firstName.value = currentFirstName;
+        var middleName = document.getElementById("middleName");
+        middleName.value = currentMiddleName;
+        var academicLevel = document.getElementById("level");
+        academicLevel.value = currentLevel;
+
+        var username = document.getElementById("username");
+        username.value = currentUserName
+        var password = document.getElementById("password");
+        password.value = currentPsw;
+        console.log("here")
+    });
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+    
+            // Get values from the form
+            var firstName = document.getElementById("firstName").value;
+            var middleName = document.getElementById("middleName").value;
+            var academicLevel = document.getElementById("level").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+    
+            // Create an object with the form values
+            var student = {
+                firstName: firstName,
+                middleName: middleName,
+                academicLevel: academicLevel,
+                username: username,
+                password: password
+            };
+
+            var currentUserName = sessionStorage.getItem('username');
+            
+            let students = JSON.parse(localStorage.getItem('students')) || [];
+
+            var index = students.findIndex(function(teacher) {
+                return student.username === currentUserName;
+            });
+
+            // If the course is found, remove it from the array
+            if (index !== -1) {
+                students.splice(index, 1); //delete 
+                students.push(student);//add new one
+                localStorage.setItem("students", JSON.stringify(students));
+            } 
+            sessionStorage.setItem('IsStudent', true);
+            sessionStorage.setItem('firstName', firstName);
+            sessionStorage.setItem('middleName', middleName);
+            sessionStorage.setItem('username', username);
+            sessionStorage.setItem('password', password);
+            sessionStorage.setItem('Level', academicLevel);
+            
+            // Display a message
+            document.getElementById("message").innerText = "Teacher registered successfully.";
+            window.location.href = "teacherpage.html";
+
+        });
+</script>
+<style>
+    #registerForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    margin-right: 10px;
+    width: 150px; /* Adjust width as needed */
+    text-align: right;
+    font-weight: 100;
+}
+
+.form-group input {
+    flex: 1;
+    
+
+}
+</style>
+
+
