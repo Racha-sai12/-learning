@@ -6,6 +6,9 @@
     --light: #F0FBFC;
     --dark: #181d38;
 }
+.main-content {
+    min-height: 51vh;
+}
 .theme-button{
     padding: 20px;
     background-color: transparent;

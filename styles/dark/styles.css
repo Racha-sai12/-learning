@@ -2,6 +2,9 @@ body{
     background-color: #1e272e;
     color: white !important;
 }
+.main-content {
+    min-height: 51vh;
+}
 .theme-button{
     color: #FFF;
     padding: 20px;
@@ -159,8 +162,8 @@ body{
 .footer{
     background-color: black !important;
     border-top: 1px solid white;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute; */
+    /* bottom: 0; */
 }
 .footer .btn.btn-social {
     margin-right: 5px;
