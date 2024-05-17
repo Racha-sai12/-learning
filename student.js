@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var navigationBtn = courseItem.querySelector(".navigation-btn");
         navigationBtn.setAttribute('data-course-id', id)
       
-        var href = "CourseDetail.html?id=" + id;
+        var href = "./CourseDetail.html?id=" + id;
         navigationBtn.setAttribute('href', href);
 
         var studentName = sessionStorage.getItem("student");
