@@ -6,6 +6,10 @@
     --light: #F0FBFC;
     --dark: #181d38;
 }
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
 .main-content {
     min-height: 51vh;
 }

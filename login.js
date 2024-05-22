@@ -1,4 +1,5 @@
-
+// when you comme to login page all the session stoarage data is cleared 
+// so that  a new user can log in 
 document.addEventListener("DOMContentLoaded", function() {
   
   sessionStorage.setItem('IsStudent', false);
@@ -14,13 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
     var form = document.getElementById("LoginForm");
 
-    
-
-    var teacherSubmit = document.getElementById("teacherSubmit");
+    var teacherSubmit = document.getElementById("teacherSubmit"); // teacher submit button
     var studentSubmit = document.getElementById("studentSubmit");
 
+    // when the teacher submit button is clicked we look in local storage for the teacher that 
+    //has the name and password entered by the user
+
     teacherSubmit.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault(); 
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
 
@@ -31,23 +33,25 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if (teacher != null) {
         document.getElementById("Message").textContent = "Teacher login successful!";
-        console.log()
 
-        sessionStorage.setItem('teacher', username);
-
-        sessionStorage.setItem('IsStudent', false);
+        // if we find the teacher we store his informations in session storage
+          sessionStorage.setItem('teacher', username);
+          sessionStorage.setItem('IsStudent', false);
           sessionStorage.setItem('firstName', teacher.firstName);
           sessionStorage.setItem('middleName', teacher.middleName);
           sessionStorage.setItem('username', teacher.username);
           sessionStorage.setItem('password', teacher.password);
           sessionStorage.setItem('Level', teacher.subject);
-        // Redirect to teacher page after successful login
 
+        // then we go to the teacher page
         window.location.href = "teacherpage.html";
         } else {
         document.getElementById("Message").textContent = "Invalid username or password.";
         }
     });
+
+
+
     studentSubmit.addEventListener("click", function(event) {
         event.preventDefault(); // Prevent form submission
         var username = document.getElementById("username").value;

@@ -2,6 +2,10 @@ body{
     background-color: #1e272e;
     color: white !important;
 }
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
 .main-content {
     min-height: 51vh;
 }

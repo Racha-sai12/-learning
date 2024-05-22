@@ -23,3 +23,7 @@ function updateTheme() {
   // Save theme to local storage
   localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
 }
+document.getElementById('openPdfLink').addEventListener('click', function() {
+  var pdfUrl = './Rapport source prof.etudiant.site.pdf'; 
+  window.open(pdfUrl, '_blank');
+});

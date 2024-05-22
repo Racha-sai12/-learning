@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Fetch data from JSON file
+    // get all the courses stored in localstorage and display them
     loadCoursesFromLocalStorage();
 
     const modal = document.getElementById('enrollModal');
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to handle payment option change
     function handlePaymentOptionChange() {
-        if (paymentOptionSelect.value === 'credit_card') {
+        if (paymentOptionSelect.value === 'credit card') {
             creditCardDiv.style.display = 'block';
         } else {
             creditCardDiv.style.display = 'none';
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('enrollement', JSON.stringify(enrollements));
     }
       
-      // Function to load courses from localStorage on page load
+      // loops through the courses and display 
       function loadCoursesFromLocalStorage() {
         const courses = JSON.parse(localStorage.getItem('courses')) || [];
         courses.forEach(course => {

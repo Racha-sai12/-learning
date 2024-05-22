@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
       const teacherName = sessionStorage.getItem('teacher');
 
 
+      if(imageUrl == null)
+        {
+        imageUrl ="./img/training1.jpg";
+      }
  
       //Create new course object
       const newCourse = {
@@ -116,6 +120,7 @@ function updateCourseContainer(course) {
   const description = course.description;
   const priceValue = course.price;
   const imgValue = course.image;
+  const teacher = course.teacher;
 
   var galleryContainer = document.getElementById("container");
   
@@ -124,7 +129,7 @@ function updateCourseContainer(course) {
   courseItem.style.display = 'block';
 
   var image = courseItem.querySelector(".img-fluid");
-  image.src = imgValue ; // Replace "new_image.jpg" with the path to your new image
+    image.src = imgValue ; 
   
   // Change the price
   var price = courseItem.querySelector("h3");
@@ -132,6 +137,10 @@ function updateCourseContainer(course) {
 
   var title = courseItem.querySelector("h5");
   title.textContent = titleValue;
+
+  
+  var teacherName = courseItem.querySelector(".teacher-name");
+  teacherName.textContent = teacher;
 
   var navigationBtn = courseItem.querySelector(".navigation-btn");
   navigationBtn.setAttribute('data-course-id', id)
