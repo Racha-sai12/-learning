@@ -10,12 +10,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get the <span> element that closes the modal
     const closeBtn = document.getElementsByClassName('close')[0];
 
+    //get the payment option selector
     const paymentOptionSelect = document.getElementById('paymentOption');
 
     // Get the credit card field div
     const creditCardDiv = document.getElementById('creditCardDiv');
 
-    // Function to handle payment option change
+    // Function to handle payment option change, when the payment option changes we hide or display credit card div
     function handlePaymentOptionChange() {
         if (paymentOptionSelect.value === 'credit card') {
             creditCardDiv.style.display = 'block';
@@ -24,11 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+
+    //the function that closes the modal
     function closeModal() {
         document.getElementById('enrollModal').style.display = 'none';
     }
-
-
     
 
     // When the user clicks on <span> (x), close the modal
@@ -48,21 +49,22 @@ document.addEventListener("DOMContentLoaded", function() {
     paymentOptionSelect.addEventListener('change', handlePaymentOptionChange);
 
 
+    //this displays a given course to container
     function updateCourseContainer(course) {
         const id = course.id;
         const titleValue = course.title
         const description = course.description;
         const priceValue = course.price;
         const imgValue = course.image;
+        var teacher = course.teacher;
       
         var galleryContainer = document.getElementById("container");
-        
       
         var courseItem = document.querySelector(".course-item").cloneNode(true);
         courseItem.style.display = 'block';
       
         var image = courseItem.querySelector(".img-fluid");
-        image.src = imgValue ; // Replace "new_image.jpg" with the path to your new image
+        image.src = imgValue ; 
         
         // Change the price
         var price = courseItem.querySelector("h3");
@@ -71,6 +73,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var title = courseItem.querySelector("h5");
         title.textContent = titleValue;
       
+        var teacherName = courseItem.querySelector(".teacher-name");
+        teacherName.textContent = teacher; 
         var navigationBtn = courseItem.querySelector(".navigation-btn");
         navigationBtn.setAttribute('data-course-id', id)
       
@@ -94,18 +98,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
             enrollButton.addEventListener('click', enrollCourse);
         }
-       
-
-      
-        //     // Append the cloned course item to the gallery container
         galleryContainer.appendChild(courseItem);
       }
     
-    function addEnrollementToLocalStorage(enrollement) {
-        let enrollements = JSON.parse(localStorage.getItem('enrollements')) || [];
-        enrollements.push(enrollement);
-        localStorage.setItem('enrollement', JSON.stringify(enrollements));
-    }
       
       // loops through the courses and display 
       function loadCoursesFromLocalStorage() {

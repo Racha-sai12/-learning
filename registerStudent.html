@@ -137,8 +137,10 @@
             };
     
             // Convert the object to a JSON string
-            let students = [];
-            students = JSON.parse(localStorage.getItem('students'));
+            let students = JSON.parse(localStorage.getItem('students'));
+            if(students == null){
+                students = [];
+            }
             students.push(student);
             localStorage.setItem('students', JSON.stringify(students));
             // Store the JSON string in local storage

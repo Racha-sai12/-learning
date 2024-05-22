@@ -10,16 +10,17 @@ document.addEventListener("DOMContentLoaded", function() {
   sessionStorage.setItem('Level', null);
   sessionStorage.setItem('student', null);
   sessionStorage.setItem('teacher', null);
-
-
 });
+
+
+
+
     var form = document.getElementById("LoginForm");
 
     var teacherSubmit = document.getElementById("teacherSubmit"); // teacher submit button
     var studentSubmit = document.getElementById("studentSubmit");
 
-    // when the teacher submit button is clicked we look in local storage for the teacher that 
-    //has the name and password entered by the user
+    // when the teacher submit button is clicked we look in local storage for the teacher that has the name and password entered by the user
 
     teacherSubmit.addEventListener("click", function(event) {
         event.preventDefault(); 
