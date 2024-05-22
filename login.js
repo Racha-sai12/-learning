@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
           sessionStorage.setItem('Level', teacher.subject);
 
         // then we go to the teacher page
-        window.location.href = "teacherpage.html";
+        window.location.href = "./teacherpage.html";
         } else {
         document.getElementById("Message").textContent = "Invalid username or password.";
         }
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
           sessionStorage.setItem('Level', student.academicLevel);
 
         // Redirect to student page after successful login
-          window.location.href = "studentpage.html";
+          window.location.href = "./studentpage.html";
         } else {
           document.getElementById("Message").textContent = "Invalid username or password.";
         }
