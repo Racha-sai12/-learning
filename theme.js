@@ -24,6 +24,6 @@ function updateTheme() {
   localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
 }
 document.getElementById('openPdfLink').addEventListener('click', function() {
-  var pdfUrl = './Rapport source prof.etudiant.site.pdf'; 
+  var pdfUrl = './Rapport sur eLearning siteweb.pdf'; 
   window.open(pdfUrl, '_blank');
 });
